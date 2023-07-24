@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import './Feedback.css';
+import './FeedbackOptions.css';
 
-const Feedback = ({ title, options, onLeaveFeedback }) => {
+const Feedback = ({ options, onLeaveFeedback }) => {
   return (
     <div className="btn">
-      <h2 className="title">{title}</h2>
       {options.map(option => {
         return (
           <button
@@ -26,7 +25,6 @@ const Feedback = ({ title, options, onLeaveFeedback }) => {
 export default Feedback;
 
 Feedback.propTypes = {
-  title: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string.isRequired),
   onLeaveFeedback: PropTypes.func.isRequired,
 };
