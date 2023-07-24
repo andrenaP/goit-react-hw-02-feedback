@@ -24,7 +24,7 @@ const Statistics = ({
           Total: <span>{TotalFeedback}</span>
         </li>
         <li>
-          Positive feedback: <span>{PositiveFeedbackPercentage}</span>
+          Positive feedback: <span>{PositiveFeedbackPercentage}%</span>
         </li>
       </ul>
     </div>
