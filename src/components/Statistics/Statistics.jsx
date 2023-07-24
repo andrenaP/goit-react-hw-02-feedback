@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import './Statistics.css';
 
-const Statistics = ({ title, good, neutral, bad }) => {
+const Statistics = ({
+  title,
+  good,
+  neutral,
+  bad,
+  TotalFeedback,
+  PositiveFeedbackPercentage,
+}) => {
   return (
     <div className="Statistics">
       <h2 className="title">{title}</h2>
@@ -10,10 +17,16 @@ const Statistics = ({ title, good, neutral, bad }) => {
           Good: <span>{good}</span>
         </li>
         <li>
-          neutral: <span>{neutral}</span>
+          Neutral: <span>{neutral}</span>
         </li>
         <li>
-          bad: <span>{bad}</span>
+          Bad: <span>{bad}</span>
+        </li>
+        <li>
+          Total: <span>{TotalFeedback}</span>
+        </li>
+        <li>
+          Positive feedback: <span>{PositiveFeedbackPercentage}</span>
         </li>
       </ul>
     </div>

@@ -8,7 +8,20 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
 
+  countPositiveFeedbackPercentage = () => {
+    const totalFeedback = this.countTotalFeedback();
+    const { good } = this.state;
+    const PositiveFeedbackPercentage = Math.round((good * 100) / totalFeedback);
+    if (totalFeedback === 0) {
+      return 0;
+    }
+    return PositiveFeedbackPercentage;
+  };
   leaveFeedback = feedbackType => {
     this.setState(prevState => {
       return {
@@ -31,6 +44,8 @@ class App extends Component {
           good={good}
           neutral={neutral}
           bad={bad}
+          TotalFeedback={this.countTotalFeedback()}
+          PositiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}
         />
       </div>
     );
